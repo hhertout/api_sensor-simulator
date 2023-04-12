@@ -7,7 +7,7 @@ services:
             - "3000:3000"
         environment:
             PORT: 3000
-            DATABASE: "hugues:wilder@tcp(127.0.0.1:3306)/api_sensor?charset=utf8mb4&parseTime=True&loc=Local"
+            DATABASE: "goapp:goapp@tcp(127.0.0.1:3306)/goapp?charset=utf8mb4&parseTime=True&loc=Local"
     
     #db:
         # platform: linux/x86_64

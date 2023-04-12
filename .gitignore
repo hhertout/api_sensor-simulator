@@ -1,0 +1,13 @@
+.idea
+.DS_Store
+
+
+test.sql
+todo.md
+
+
+.env
+.dockerignore
+
+# Builded program
+api_sensor

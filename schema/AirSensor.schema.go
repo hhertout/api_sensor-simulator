@@ -1,10 +1,8 @@
 package schema
 
-import "gorm.io/gorm"
-
 type AirSensor struct {
-	gorm.Model
-	AirDataID string
+	ID        uint    `gorm:"primaryKey"`
+	AirDataID string  `json:"air_data_id"`
 	O2        float32 `json:"o2"`
 	Co2       float32 `json:"co2"`
 	Co        float32 `json:"co"`

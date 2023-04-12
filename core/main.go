@@ -5,17 +5,24 @@ import (
 	"api_sensor/core/entity"
 	"api_sensor/core/tools"
 	"api_sensor/schema"
+	"fmt"
+	"time"
 
 	"github.com/mintance/go-uniqid"
 )
 
 func Main() {
-	airSensorData := tools.GenerateAirSensorData()
-	d := tools.GenerateFinalData(&airSensorData)
+	for {
+		airSensorData := tools.GenerateAirSensorData()
+		d := tools.GenerateFinalData(&airSensorData)
 
-	err := saveInDatabase(&d)
-	if err != nil {
-		panic(err)
+		err := saveInDatabase(&d)
+		if err != nil {
+			panic(err)
+		}
+
+		fmt.Println("Data saved in database")
+		time.Sleep(time.Minute)
 	}
 
 }

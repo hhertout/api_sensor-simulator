@@ -36,7 +36,7 @@ func createDataSet() entity.AirSensor {
 	defaultValues.SetCO2(300)
 	defaultValues.SetCO(10)
 	defaultValues.SetSO2(50)
-	defaultValues.SetNOX(0)
+	defaultValues.SetNOX(2)
 	defaultValues.SetPM10(30)
 	defaultValues.SetPM25(30)
 	defaultValues.SetNO2(780)

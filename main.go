@@ -11,7 +11,7 @@ func main() {
 	config.DBconnect()
 	config.Migrate()
 
-	core.Main()
+	go core.Main()
 
 	router.Main()
 }

@@ -1,0 +1,30 @@
+version: '3.7'
+
+services:
+    api:
+        build: .
+        volumes:
+            - .:/app
+        ports:
+            - "3000:3000"
+        environment:
+            PORT: 3000
+            DATABASE: "goapp:goapp@tcp(127.0.0.1:3306)/goapp?charset=utf8mb4&parseTime=True&loc=Local"
+    
+    db:
+        image: mysql:5.7
+        restart: always
+        volumes:
+            - .docker/setup.sql:/docker-entrypoint-initdb.d/setup.sql
+            - db_data:/var/lib/mysql
+        ports:
+            - "3306:3306"
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: goapp
+            MYSQL_USER: goapp
+            MYSQL_PASSWORD: goapp
+        command: "CREATE DATABASE "
+
+volumes:
+    db_data:

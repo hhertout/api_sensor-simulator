@@ -42,19 +42,19 @@ func createDataSet() entity.AirSensor {
 }
 
 func genRandomDataFrom(d entity.AirSensor) entity.AirSensor {
-	d.SetO2(randomiser(d.GetO2()))
-	d.SetCO2(randomiser(d.GetCO2()))
-	d.SetCO(randomiser(d.GetCO()))
-	d.SetSO2(randomiser(d.GetSO2()))
-	d.SetNOX(randomiser(d.GetNOX()))
-	d.SetPM10(randomiser(d.GetPM10()))
-	d.SetPM25(randomiser(d.GetPM25()))
-	d.SetNO2(randomiser(d.GetNO2()))
-	d.SetCH4(randomiser(d.GetCH4()))
+	d.SetO2(Randomiser(d.GetO2()))
+	d.SetCO2(Randomiser(d.GetCO2()))
+	d.SetCO(Randomiser(d.GetCO()))
+	d.SetSO2(Randomiser(d.GetSO2()))
+	d.SetNOX(Randomiser(d.GetNOX()))
+	d.SetPM10(Randomiser(d.GetPM10()))
+	d.SetPM25(Randomiser(d.GetPM25()))
+	d.SetNO2(Randomiser(d.GetNO2()))
+	d.SetCH4(Randomiser(d.GetCH4()))
 
 	return d
 }
 
-func randomiser(data float32) float32 {
+func Randomiser(data float32) float32 {
 	return data + (data * (rand.Float32() - 0.5))
 }

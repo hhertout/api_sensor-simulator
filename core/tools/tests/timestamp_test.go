@@ -1,6 +1,7 @@
-package tools
+package tools_test
 
 import (
+	"api_sensor/core/tools"
 	"strconv"
 	"testing"
 	"time"
@@ -9,7 +10,7 @@ import (
 func TestGetTimestamp(t *testing.T) {
 	// Test that the timestamp is greater than 0
 	t.Run("Positive", func(t *testing.T) {
-		ts := GetTimestamp()
+		ts := tools.GetTimestamp()
 		if ts <= 0 {
 			t.Errorf("GetTimestamp() = %d; want > 0", ts)
 		}
@@ -17,7 +18,7 @@ func TestGetTimestamp(t *testing.T) {
 
 	// Test that the timestamp is within a reasonable range
 	t.Run("WithinRange", func(t *testing.T) {
-		ts := GetTimestamp()
+		ts := tools.GetTimestamp()
 		now := time.Now().UnixNano()
 		if ts < now-1000000000 || ts > now+1000000000 {
 			t.Errorf("GetTimestamp() = %d; want within %d of %d", ts, 1000000000, now)
@@ -28,7 +29,7 @@ func TestGetTimestamp(t *testing.T) {
 func TestGetStringTimestamp(t *testing.T) {
 	// Test that the string timestamp is not empty
 	t.Run("NotEmpty", func(t *testing.T) {
-		ts := GetStringTimestamp()
+		ts := tools.GetStringTimestamp()
 		if ts == "" {
 			t.Error("GetStringTimestamp() returned an empty string; want non-empty string")
 		}
@@ -36,7 +37,7 @@ func TestGetStringTimestamp(t *testing.T) {
 
 	// Test that the string timestamp can be converted back to an int64
 	t.Run("Parseable", func(t *testing.T) {
-		ts := GetStringTimestamp()
+		ts := tools.GetStringTimestamp()
 		i, err := strconv.ParseInt(ts, 10, 64)
 		if err != nil {
 			t.Errorf("Error parsing timestamp string %q: %v", ts, err)
@@ -48,7 +49,7 @@ func TestGetStringTimestamp(t *testing.T) {
 
 	// Test that the string timestamp corresponds to the current time within a reasonable range
 	t.Run("CurrentTime", func(t *testing.T) {
-		ts := GetStringTimestamp()
+		ts := tools.GetStringTimestamp()
 		now := time.Now().UnixNano()
 		i, err := strconv.ParseInt(ts, 10, 64)
 		if err != nil {

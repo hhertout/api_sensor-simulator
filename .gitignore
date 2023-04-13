@@ -7,7 +7,6 @@ todo.md
 
 
 .env
-.dockerignore
 
 # Builded program
 api_sensor

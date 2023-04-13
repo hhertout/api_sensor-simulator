@@ -25,10 +25,6 @@ func GenerateFinalData(s *entity.AirSensor) entity.AirData {
 	return data
 }
 
-func GetTimeStamp() {
-	panic("unimplemented")
-}
-
 func createDataSet() entity.AirSensor {
 	var defaultValues entity.AirSensor
 

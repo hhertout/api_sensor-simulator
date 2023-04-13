@@ -28,7 +28,7 @@ func Main() {
 }
 
 func saveInDatabase(d *entity.AirData) error {
-	id := uniqid.New(uniqid.Params{"", true})
+	id := uniqid.New(uniqid.Params{MoreEntropy: true})
 
 	sensorData := d.GetData()
 	result := config.DB.Create(&schema.AirData{

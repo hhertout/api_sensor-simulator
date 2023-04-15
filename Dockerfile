@@ -6,4 +6,4 @@ COPY . .
 
 RUN go build
 
-CMD [ "api_sensor" ]
+CMD [ "./api_sensor" ]

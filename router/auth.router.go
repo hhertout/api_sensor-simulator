@@ -9,5 +9,5 @@ import (
 
 func authRoute(router *gin.Engine) {
 	router.POST("api/auth", controller.CreateKey)
-	router.GET("api/auth/validate", middleware.CheckCrendentials, controller.GetAuth)
+	router.GET("api/auth/validate", middleware.CheckCredentials, controller.GetAuth)
 }

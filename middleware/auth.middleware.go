@@ -8,7 +8,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func CheckCrendentials(c *gin.Context) {
+func CheckCredentials(c *gin.Context) {
 	auth := c.GetHeader("Authorization")
 	if auth == "" {
 		c.AbortWithStatus(http.StatusUnauthorized)

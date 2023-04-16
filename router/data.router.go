@@ -8,6 +8,6 @@ import (
 )
 
 func dataRoute(router *gin.Engine) {
-	router.GET("api/air", middleware.CheckCrendentials, controller.GetData)
-	router.GET("api/air/latest", middleware.CheckCrendentials, controller.GetLatestData)
+	router.GET("api/air", middleware.CheckCredentials, controller.GetData)
+	router.GET("api/air/latest", middleware.CheckCredentials, controller.GetLatestData)
 }

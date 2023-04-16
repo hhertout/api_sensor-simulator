@@ -2,7 +2,7 @@ package core
 
 import (
 	"api_sensor/config"
-	"api_sensor/core/entity"
+	"api_sensor/core/entity/AirSensor"
 	"api_sensor/core/tools"
 	"api_sensor/schema"
 	"fmt"
@@ -27,7 +27,7 @@ func Main() {
 
 }
 
-func saveInDatabase(d *entity.AirData) error {
+func saveInDatabase(d *AirSensor.AirSensor) error {
 	id := uniqid.New(uniqid.Params{MoreEntropy: true})
 
 	sensorData := d.GetData()

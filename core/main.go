@@ -14,7 +14,7 @@ import (
 func Main() {
 	for {
 		airSensorData := tools.GenerateAirSensorData()
-		d := tools.GenerateFinalData(&airSensorData)
+		d := tools.GenerateFinalData(airSensorData)
 
 		err := saveInDatabase(&d)
 		if err != nil {

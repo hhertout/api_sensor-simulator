@@ -13,14 +13,14 @@ func GenerateAirSensorData() AirSensor.AirData {
 	return sensorData
 }
 
-func GenerateFinalData(s *AirSensor.AirData) AirSensor.AirSensor {
+func GenerateFinalData(s AirSensor.AirData) AirSensor.AirSensor {
 	var data AirSensor.AirSensor
 	ts := GetTimestamp()
 
 	data.SetName("Air Sensor")
 	data.SetLocation("Jakarta")
 	data.SetTimeStamp(ts)
-	data.SetData(*s)
+	data.SetData(s)
 
 	return data
 }
